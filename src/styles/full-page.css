@@ -2,8 +2,8 @@
 
 .edl-full-page {
   align-items: center;
-  background: url('images/earth-day-live-gradient.jpg') no-repeat center center fixed;
-  bottom: 0;
+  background: url('images/earth-day-live-gradient.jpg') no-repeat center top;
+  top: 0;
   color: var(--white);
   display: none;
   justify-content: center;
