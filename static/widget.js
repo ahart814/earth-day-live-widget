@@ -10,8 +10,8 @@
   var iframeHost = options.iframeHost !== undefined ? options.iframeHost : 'https://widget.earthdaylive2020.org'
   var websiteName = options.websiteName || null
   var partnerReferrer = options.partnerReferrer || null
-  var footerDisplayStartDate = options.footerDisplayStartDate || new Date(2019, 12, 1)       // January 1st, 2020 - arbitrary date in the past
-  var fullPageDisplayStartDate = options.fullPageDisplayStartDate || new Date(2020, 5, 22)  // May 22nd, 2020 - Updated to stall fullpage takeover
+  var headerDisplayStartDate = options.headerDisplayStartDate || new Date(2019, 12, 1)       // January 1st, 2020 - arbitrary date in the past
+  var fullPageDisplayStartDate = options.fullPageDisplayStartDate || new Date(2020, 5, 22)  // June 22nd, 2020 - Updated to stall fullpage takeover
   var forceFullPageWidget = !!options.forceFullPageWidget
   var cookieExpirationDays = parseFloat(options.cookieExpirationDays || 1)
   var alwaysShowWidget = !!(options.alwaysShowWidget || window.location.hash.indexOf('ALWAYS_SHOW_EARTH_DAY_LIVE') !== -1)
@@ -178,7 +178,7 @@
   function iFrameShouldNotBeShown() {
     if (alwaysShowWidget) return false
 
-    return (footerDisplayStartDate.getTime() > NOW && fullPageDisplayStartDate.getTime() > NOW)
+    return (headerDisplayStartDate.getTime() > NOW && fullPageDisplayStartDate.getTime() > NOW)
       || new Date(fullPageDisplayStartDate.getTime() + MS_PER_DAY) < NOW
       || !!getCookie(CLOSED_COOKIE)
   }
@@ -193,7 +193,7 @@
     var iFrameHeight = getIframeHeight()
 
     injectCSS('EARTH_DAY_LIVE_CSS',
-      '#' + DOM_ID + ' { position: fixed; right: 0; left: 0; bottom: 0px; width: 100%; height: ' + iFrameHeight + '; z-index: 20000; -webkit-overflow-scrolling: touch; overflow: hidden; } ' +
+      '#' + DOM_ID + ' { position: fixed; right: 0; left: 0; top: 0px; width: 100%; height: ' + iFrameHeight + '; z-index: 20000; -webkit-overflow-scrolling: touch; overflow: hidden; } ' +
       '#' + DOM_ID + ' iframe { width: 100%; height: 100%; }'
     )
 

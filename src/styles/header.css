@@ -1,9 +1,9 @@
-/* footer */
+/* header */
 
-.edl-footer {
+.edl-header {
   background: url('images/earth-day-live-gradient.jpg') no-repeat center top;
   background-size: cover;
-  top: 0;
+  bottom: 0;
   box-shadow: 0 0 1.6rem rgba(0, 0, 0, 0.2);
   font-family: titling-gothic-fb, sans-serif;
   left: 0;
@@ -13,33 +13,33 @@
   width: 100%;
 }
 
-.edl-footer__close {
+.edl-header__close {
   height: 3rem;
   position: absolute;
   right: 0;
-  top: 0;
+  bottom: 0;
   width: 3rem;
 }
 
-.edl-footer__container {
+.edl-header__container {
   display: flex;
   flex-wrap: nowrap;
   margin: 0 auto;
   max-width: 50rem;
 }
 
-.edl-footer__logo {
+.edl-header__logo {
   display: block;
   flex: 0 0 20%;
 }
 
-.edl-footer__main {
+.edl-header__main {
   flex: 0 0 70%;
   margin-top: -.4rem; /* magic number: top text align to logo */
   margin: 0 1rem;
 }
 
-.edl-footer__body {
+.edl-header__body {
   color: var(--white);
   font: normal 1rem/1.2rem titling-gothic-fb, sans-serif;
   max-width: 26rem;
@@ -59,13 +59,13 @@
   cursor: pointer;
 }
 
-.edl-footer__icon {
+.edl-header__icon {
   vertical-align: middle;
   max-width: 1rem;
   padding-bottom: 5px;
 }
 
-.edl-footer__icon:hover {
+.edl-header__icon:hover {
   cursor: pointer;
 }
 /* Breakpoint */
@@ -78,7 +78,7 @@
 }
 
 @media(min-width: 600px) and (max-width: 899px) {
-  .edl-footer__body {
+  .edl-header__body {
     font: normal 1.5rem/2.2rem titling-gothic-fb, sans-serif;
     max-width: none;
   }
@@ -86,26 +86,26 @@
 
 @media(min-width: 900px) {
 
-  .edl-footer__container {
+  .edl-header__container {
     max-width: 60rem;
   }
 
-  .edl-footer__logo {
+  .edl-header__logo {
     flex: 0 0 20%;
   }
 
-  .edl-footer__main {
+  .edl-header__main {
     flex: 1;
     display: flex;
   }
 
-  .edl-footer__body {
+  .edl-header__body {
     font-size: 1.75rem;
     line-height: 2.75rem;
     max-width: none;
   }
 
-  .edl-footer__icon {
+  .edl-header__icon {
     max-width: 2rem;
   }
 }

@@ -6,74 +6,37 @@
     <title>{{ title }}</title>
   </head>
   <body>
-    <main class="edl-full-page" role="main">
-      <div class="edl-full-page__container">
-        <div class="edl-full-page__close">
-          <button type="button" class="edl-close" title="{{ close_overlay }}">
-            <span class="edl-sr-only">{{ close_overlay }}</span>
-          </button>
-        </div>
-        <div class="edl-full-page__main">
-          <div class="edl-full-page__details">
-            <h1 class="edl-sr-only">{{ title }}</h1>
-            <a class="edl-full-page__logo" href="#">
-              <img
-                src="images/edl-logo.png"
-                class="edl-logo--med"
-                alt="{{ logo_alt }}"
-              />
-            </a>
-            {{#with full_page}}
-            <div class="edl-full-page__body">
-              <div>
-                {{{ body }}}
-                <div class="edl-link__wrapper">
-                  <a class="edl-link">{{ link_text }}</a>
-                  <a class="edl-link__icon">
-                    <img class="edl-page__icon" src="images/circle-arrow.svg" alt="Arrow right icon" />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="edl-full-page__footer">
-              <small>
-                {{{ footer }}}
-              </small>
-            </div>
-            {{/with}}
-          </div>
-        </div>
-      </div>
-    </main>
-    <footer class="edl-footer" role="contentinfo">
-      <div class="edl-footer__container">
-        <a class="edl-footer__logo" href="#">
+  
+    <header class="edl-header" role="contentinfo">
+      <div class="edl-header__container">
+        <a class="edl-header__logo" href="#">
           <img
             src="images/edl-logo.png"
             alt="{{ logo_alt }}"
             class="edl-logo"
           />
         </a>
-        <div class="edl-footer__main">
+        <div class="edl-header__main">
           {{#with footer}}
-          <div class="edl-footer__body">
+          <div class="edl-header__body">
             {{{ body }}}
             <div class="edl-link__wrapper">
               <a class="edl-link">{{ link_text }}</a>
               <a class="edl-link__icon">
-                <img class="edl-footer__icon" src="images/circle-arrow.svg" alt="Arrow right icon" />
+                <img class="edl-header__icon" src="images/circle-arrow.svg" alt="Arrow right icon" />
               </a>
             </div>
           </div>
           {{/with}}
         </div>
-        <div class="edl-footer__close">
+        <div class="edl-header__close">
           <button type="button" class="edl-close" title="{{ close_banner }}">
             <span class="edl-sr-only">{{ close_banner }}</span>
           </button>
         </div>
       </div>
-    </footer>
+    </header>
   </body>
 </html>
+
 

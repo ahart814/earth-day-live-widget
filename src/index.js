@@ -33,8 +33,8 @@ function maximize() {
   if (isMaximizing) return
   isMaximizing = true
   postMessage('maximize')
-  const stickyFooter = document.querySelector('.edl-footer')
-  stickyFooter.style.display = 'none'
+  const stickyheader = document.querySelector('.edl-header')
+  stickyheader.style.display = 'none'
 
   const fullPage = document.querySelector('.edl-full-page')
   fullPage.style.display = 'flex'
@@ -51,8 +51,8 @@ function showCloseButtonOnFullPageWidget() {
   const fullPageCloseButtonContent = document.querySelector('.edl-close')
   fullPageCloseButtonContent.classList.add('edl-full-page-close')
 
-  const fullPageFooter = document.querySelector('.edl-full-page__footer')
-  fullPageFooter.style.display = 'none'
+  const fullPageheader = document.querySelector('.edl-full-page__header')
+  fullPageheader.style.display = 'none'
 }
 
 function isTruthy(str) {
@@ -121,15 +121,15 @@ function initGoogleAnalytics() {
 }
 
 function addTrackingEvents(hostname, forceFullPageWidget) {
-  attachEvent('.edl-footer .edl-link', 'click', () => trackEvent('footer-join-button', 'click', hostname))
-  attachEvent('.edl-footer .edl-close', 'click', () => trackEvent('footer-close-button', 'click', hostname))
+  attachEvent('.edl-header .edl-link', 'click', () => trackEvent('header-join-button', 'click', hostname))
+  attachEvent('.edl-header .edl-close', 'click', () => trackEvent('header-close-button', 'click', hostname))
   attachEvent('.edl-full-page .edl-link', 'click', () => trackEvent('full-page-join-button', 'click', hostname))
   attachEvent('.edl-full-page .edl-close', 'click', () => trackEvent('full-page-close-button', 'click', hostname))
 
   if (forceFullPageWidget) {
     trackEvent('full-page-widget', 'load', hostname)
   } else {
-    trackEvent('footer-widget', 'load', hostname)
+    trackEvent('header-widget', 'load', hostname)
   }
 }
 
@@ -179,16 +179,16 @@ function initializeInterface() {
 
   appendPartnerReferrerToUrls(query.partnerReferrer || null)
 
-  setEarthDayLiveLinkUrl('.edl-footer .edl-link__wrapper .edl-link')
-  setEarthDayLiveLinkUrl('.edl-footer .edl-link__wrapper .edl-link__icon')
-  setEarthDayLiveLinkUrl('.edl-footer__logo')
+  setEarthDayLiveLinkUrl('.edl-header .edl-link__wrapper .edl-link')
+  setEarthDayLiveLinkUrl('.edl-header .edl-link__wrapper .edl-link__icon')
+  setEarthDayLiveLinkUrl('.edl-header__logo')
   setEarthDayLiveLinkUrl('.edl-full-page .edl-link__wrapper .edl-link')
   setEarthDayLiveLinkUrl('.edl-full-page .edl-link__wrapper .edl-link__icon')
   setEarthDayLiveLinkUrl('.edl-full-page__logo')
   attachEvent('.edl-close', 'click', handleCloseButtonClick)
   attachEvent('.edl-link', 'click', handleJoinEDLButtonClick)
   attachEvent('.edl-link__icon', 'click', handleJoinEDLButtonClick)
-  attachEvent('.edl-footer__logo', 'click', handleJoinEDLButtonClick)
+  attachEvent('.edl-header__logo', 'click', handleJoinEDLButtonClick)
   attachEvent('.edl-full-page__logo', 'click', handleJoinEDLButtonClick)
 
   language = query.language ? query.language : language
